@@ -89,7 +89,7 @@ resource "aws_instance" "myapp-server" {
     availability_zone = var.avail_zone
 
     associate_public_ip_address = true
-    key_name = "new2"
+    key_name = "new"
     user_data = file("entry-script.sh")
 
     tags = {
