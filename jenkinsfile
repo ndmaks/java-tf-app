@@ -4,7 +4,7 @@ pipeline {
     agent any
     tools {
         maven 'maven'
-        terraform 'tf'
+        Terraform 'tf'
     }
     environment {
         IMAGE_NAME = "ndm-aks/java-app:java-maven-${BUILD_NUMBER}"
