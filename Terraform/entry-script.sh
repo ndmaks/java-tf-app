@@ -4,9 +4,10 @@ sudo yum update -y && sudo yum install -y
 #sudo service docker start
 sudo systemctl start docker 
 #sudo groupadd docker
-sudo usermod -aG docker ec2-user
 sudo usermod -a -G docker jenkins
-sudo reboot
+sudo usermod -aG docker ec2-user
+
+#sudo reboot
 #chmod 777 /var/run/docker.sock
 
 # install docker-compose 
