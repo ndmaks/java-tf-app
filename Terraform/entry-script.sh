@@ -1,7 +1,7 @@
 #!/bin/bash
 sudo yum update -y && sudo yum install -y docker
 #sudo service docker start
-#chmod 666 /var/run/docker.sock
+chmod 666 /var/run/docker.sock
 sudo systemctl start docker 
 #sudo groupadd docker
 #sudo usermod -a -G docker jenkins
