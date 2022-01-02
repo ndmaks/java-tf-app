@@ -7,7 +7,7 @@ pipeline {
         terraform 'terra'
     }
     environment {
-        IMAGE_NAME = "ndm-aks/java-app:java-maven-${BUILD_NUMBER}"
+        IMAGE_NAME = "ndmaks/java-app:java-maven-${BUILD_NUMBER}"
     }
     stages {
     
@@ -32,9 +32,9 @@ pipeline {
             steps {
                 script {
                     echo "building the docker image"
-                     withCredentials([usernamePassword(credentialsId: 'docker-hub', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
+                     withCredentials([usernamePassword(credentialsId: 'docker-hub', passwordVariable: 'PASSWORD', usernameVariable: 'USER')]) {
                         sh 'docker build -t ${IMAGE_NAME} .'
-                        sh "echo $PASS | docker login -u $USER --password-stdin"
+                        sh "echo $PASSWORD | docker login -u $USER --password-stdin"
                         sh 'docker push ${IMAGE_NAME}'
                     }
                 }
