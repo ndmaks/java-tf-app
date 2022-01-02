@@ -6,7 +6,7 @@ sudo systemctl start docker
 #sudo usermod -a -G docker jenkins
 #sudo service jenkins restart
 #sudo reboot
-sudo groupadd docker
+#sudo groupadd docker
 sudo usermod -aG docker ec2-user
 newgrp docker
 #chmod 666 /var/run/docker.sock
